@@ -1,0 +1,43 @@
+﻿@model Agenda_ASPNET.Models.Contato
+
+@{
+    ViewData["Title"] = "Deletar Contato";
+}
+
+<h1>Deletar Contato</h1>
+
+<h3>Você tem certeza que deseja deletar este contato?</h3>
+<div>    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+    </dl>
+
+    <form asp-action="DeletarContato">
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        <input type="submit" class="btn btn-info" value="Voltar" asp-action="Index" />
+    </form>
+</div>

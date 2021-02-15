@@ -1,0 +1,29 @@
+﻿@model Agenda_ASPNET.Models.Contato
+
+@{
+    ViewData["Title"] = "Editar Contato";
+}
+
+<h1>Editar Usuario</h1>
+
+<form asp-action="EditarContato">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <label class="form-label">Nome</label>
+                <input class="form-control" type="text" asp-for="Nome" />
+            </div>
+            <div class="row">
+                <label class="form-label">Email</label>
+                <input class="form-control" type="text" asp-for="Email" />
+            </div>
+            <div class="row">
+                <label class="col-form-label">Telefone</label>
+                <input class="form-control" type="text" asp-for="Telefone" />
+            </div>
+            <br>
+            <input class="btn btn-success" type="submit" value="Editar" />
+            <input class="btn btn-info" type="submit" asp-action="Index" value="Voltar" />
+        </div>
+    </div>
+</form>

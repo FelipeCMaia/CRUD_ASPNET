@@ -1,0 +1,58 @@
+﻿@model List<Agenda_ASPNET.Models.Contato>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Crud ASP.NET</h1>
+
+<input type="button" class="btn btn-success" value="Adicionar Contato" onclick="location.href='@Url.Action("CriarContato")'" />
+
+<br>
+<br>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Telefone
+            </th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Telefone)
+                </td>
+                <td>
+                    <input type="button" class="btn btn-info" value="Editar" onclick="location.href='@Url.Action("EditarContato", new {id = item.Id})'" />
+                    <input type="button" class="btn btn-danger" value="Deletar" onclick="location.href='@Url.Action("DeletarContato", new {id = item.Id})'" />
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
